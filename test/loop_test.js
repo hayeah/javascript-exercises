@@ -231,10 +231,25 @@ describe("for 循环", () => {
     });
   });
 
-  //  方法将数组中的所有元素连接成一个字符串
+  // http://www.css88.com/doc/underscore/#zip
+  describe("zip(arrays)", () => {
+    it("将每个 arrays 中相应位置的值合并在一起", () => {
+      let arrays = [
+        ['moe', 'larry', 'curly'],
+        [30, 40, 50],
+        [true, false, false],
+      ];
 
+      var result;
 
-
+      result = loop.zip(arrays, 1);
+      assert.deepEqual(result, [
+        ["moe", 30, true],
+        ["larry", 40, false],
+        ["curly", 50, false]
+      ]);
+    });
+  });
 
 
 
