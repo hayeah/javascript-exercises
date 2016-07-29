@@ -137,6 +137,20 @@ describe("for 循环", () => {
     });
   });
 
+  describe("concatenateArrays(arrays)", () => {
+    it("把数组里面的数组全部拼接在一起", () => {
+      let arrays = [
+        [1,2,3],
+        [4,5,6,7],
+        [],
+        [8,9,10],
+      ];
+
+      let result = loop.concatenateArrays(arrays);
+      assert.deepEqual(result, [1,2,3,4,5,6,7,8,9,10]);
+    });
+  });
+
   describe("removeDuplicatedNumbers(arr)", () => {
     it("把重复的数字移除", () => {
       let a = [
@@ -147,5 +161,19 @@ describe("for 循环", () => {
       assert.deepEqual(sum, [0,1,2,3,4,5,6,7,8,9]);
     });
   });
+
+  describe("removeDuplicatedNumbers(arr)", () => {
+    it("把重复的数字移除", () => {
+      let a = [
+        0,1,2,3,1,2,4,5,6,7,8,9,8,8,9,0
+      ];
+
+      let sum = loop.removeDuplicatedNumbers(a);
+      assert.deepEqual(sum, [0,1,2,3,4,5,6,7,8,9]);
+    });
+  });
+
+
+
 
 });
