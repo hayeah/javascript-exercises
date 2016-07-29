@@ -51,6 +51,40 @@ describe("for 循环", () => {
     });
   });
 
+  describe("filterNegativeNumbers", () => {
+    it("构建新的数组，去除负数的元素", () => {
+
+      let a1 = [];
+      let r1 = loop.filterNegativeNumbers(a1);
+      assert.deepEqual(r1, []);
+
+      let a2 = [1, 2, 3];
+      let r2 = loop.filterNegativeNumbers(a2);
+      assert.deepEqual(r2, [1, 2, 3]);
+
+      let a3 = [1, -1, 2, -2, 3, -3];
+      let r3 = loop.filterNegativeNumbers(a3);
+      assert.deepEqual(r3, [1, 2, 3]);
+    });
+  });
+
+  describe("keepTwoNegativeNumbers", () => {
+    it("构建新的数组，只保留最多两个负数的元素", () => {
+
+      let a1 = [];
+      let r1 = loop.keepTwoNegativeNumbers(a1);
+      assert.deepEqual(r1, []);
+
+      let a2 = [1, 2, 3];
+      let r2 = loop.keepTwoNegativeNumbers(a2);
+      assert.deepEqual(r2, [1, 2, 3]);
+
+      let a3 = [1, -1, 2, -2, 3, -3];
+      let r3 = loop.keepTwoNegativeNumbers(a3);
+      assert.deepEqual(r3, [1, -1, 2, -2, 3]);
+    });
+  });
+
 
 
   it("收集奇数索引的元素到一个新数组")
