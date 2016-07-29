@@ -3,6 +3,8 @@
 先安装练习的测试依赖：
 
 ```
+git clone https://github.com/hayeah/javascript-exercises.git
+cd javascript-exercises
 npm install
 ```
 
