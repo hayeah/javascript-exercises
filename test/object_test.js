@@ -37,6 +37,25 @@ describe("Object 操作", () => {
     });
   });
 
+  describe("invert(o)", () => {
+    it("把对象的键值对调", () => {
+      var r;
+
+      var o = {
+        a: "z",
+        b: "y",
+        c: "x",
+      };
+
+      r = object.invert(o);
+      assert.deepEqual(r, {
+        z: "a",
+        y: "b",
+        x: "c",
+      });
+    });
+  });
+
   describe("toDictionary(a)", () => {
     it("把数组里面的键值转成对象", () => {
       var r;
