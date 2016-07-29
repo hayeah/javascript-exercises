@@ -19,17 +19,17 @@ describe("for 循环", () => {
       let a1 = [];
       let r1 = loop.cloneArray(a1);
       assert.notEqual(r1, a1);
-      assert.deepEqual(r1, a1);
+      assert.deepEqual(r1, []);
 
       let r2 = [1, 2, 3];
       let _a2 = loop.cloneArray(r2);
       assert.notEqual(_a2, r2);
-      assert.deepEqual(_a2, r2);
+      assert.deepEqual(_a2, [1,2,3]);
 
       let r3 = ["c", "b", "a"];
       let _a3 = loop.cloneArray(r3);
       assert.notEqual(_a3, r3);
-      assert.deepEqual(_a3, r3);
+      assert.deepEqual(_a3, ["c", "b", "a"]);
 
     });
   });
@@ -39,7 +39,6 @@ describe("for 循环", () => {
 
       let a1 = [];
       let r1 = loop.reverseArray(a1);
-      assert.notEqual(r1, a1);
       assert.deepEqual(r1, []);
 
       let a2 = [1, 2, 3];
