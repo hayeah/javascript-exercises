@@ -37,6 +37,19 @@ describe("Object 操作", () => {
     });
   });
 
+  describe("toDictionary(a)", () => {
+    it("把数组里面的键值转成对象", () => {
+      var r;
+
+      r = object.toDictionary([["a", 1], ["b", 2], ["c", 3]]);
+      assert.deepEqual(r, {
+        a: 1,
+        b: 2,
+        c: 3,
+      });
+    });
+  });
+
   describe("toArray(o)", () => {
     it("把对象的键值收集到一个数组里面", () => {
       var r;
