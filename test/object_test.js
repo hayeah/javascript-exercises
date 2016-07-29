@@ -108,6 +108,28 @@ describe("Object 操作", () => {
     });
   });
 
+  describe("countStrings(strings)", () => {
+    it("数同样的字串在数组里出现了几次", () => {
+      var r;
+
+      r = object.countStrings([]);
+      assert.deepEqual(r, {});
+
+      r = object.countStrings(["a", "b"]);
+      assert.deepEqual(r, {
+        a: 1,
+        b: 1,
+      });
+
+      r = object.countStrings(["a", "b", "a", "b", "c"]);
+      assert.deepEqual(r, {
+        a: 2,
+        b: 2,
+        c: 1,
+      });
+    });
+  });
+
 
 
 });
