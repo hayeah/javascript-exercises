@@ -134,7 +134,7 @@ describe("Object 操作", () => {
     it("把所有为数字的值 x 2, 所有为字串的值改成大写", () => {
       var r;
 
-      r = object.double({
+      r = object.transformProperties({
         a: 1,
         b: "abc",
         c: 2,
