@@ -24,7 +24,7 @@ describe("for 循环", () => {
       let r2 = [1, 2, 3];
       let _a2 = loop.cloneArray(r2);
       assert.notEqual(_a2, r2);
-      assert.deepEqual(_a2, [1,2,3]);
+      assert.deepEqual(_a2, [1, 2, 3]);
 
       let r3 = ["c", "b", "a"];
       let _a3 = loop.cloneArray(r3);
@@ -107,9 +107,9 @@ describe("for 循环", () => {
   describe("collectPropertyValues(arr, key)", () => {
     it("数组里面有对象，把 key 参数指定的值取出来收集到数组里面", () => {
       let a = [
-        {foo: 1, bar: "a"},
-        {foo: 2, bar: "b"},
-        {foo: 3, bar: "c"},
+        { foo: 1, bar: "a" },
+        { foo: 2, bar: "b" },
+        { foo: 3, bar: "c" },
       ];
 
       let r1 = loop.collectPropertyValues(a, "foo");
@@ -126,10 +126,10 @@ describe("for 循环", () => {
   describe("sumNestedNumberArrays(arr)", () => {
     it("用嵌套循环把嵌套数组的数字加总", () => {
       let a = [
-        [1,2,3],
-        [4,5,6,7],
+        [1, 2, 3],
+        [4, 5, 6, 7],
         [],
-        [8,9,10],
+        [8, 9, 10],
       ];
 
       let sum = loop.sumNestedNumberArrays(a);
@@ -140,32 +140,33 @@ describe("for 循环", () => {
   describe("concatenateArrays(arrays)", () => {
     it("把数组里面的数组全部拼接在一起", () => {
       let arrays = [
-        [1,2,3],
-        [4,5,6,7],
+        [1, 2, 3],
+        [4, 5, 6, 7],
         [],
-        [8,9,10],
+        [8, 9, 10],
       ];
 
       let result = loop.concatenateArrays(arrays);
-      assert.deepEqual(result, [1,2,3,4,5,6,7,8,9,10]);
+      assert.deepEqual(result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     });
   });
 
   describe("removeDuplicatedNumbers(arr)", () => {
     it("把重复的数字移除", () => {
       let a = [
-        0,1,2,3,1,2,4,5,6,7,8,9,8,8,9,0
+        0, 1, 2, 3, 1, 2, 4, 5, 6, 7, 8, 9, 8, 8, 9, 0
       ];
 
       let sum = loop.removeDuplicatedNumbers(a);
-      assert.deepEqual(sum, [0,1,2,3,4,5,6,7,8,9]);
+      assert.deepEqual(sum, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
   });
 
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
   describe("sliceArray(arr,a,b)", () => {
     it("取出索引大于等于 a 小于 b 的元素", () => {
       let numbers = [
-        1,2,3,4,5,6
+        1, 2, 3, 4, 5, 6
       ];
 
       var result;
@@ -177,10 +178,10 @@ describe("for 循环", () => {
       assert.deepEqual(result, [1]);
 
       result = loop.sliceArray(numbers, 0, 3);
-      assert.deepEqual(result, [1,2,3]);
+      assert.deepEqual(result, [1, 2, 3]);
 
       result = loop.sliceArray(numbers, 0, 10);
-      assert.deepEqual(result, [1,2,3,4,5,6]);
+      assert.deepEqual(result, [1, 2, 3, 4, 5, 6]);
     });
   });
 
@@ -204,6 +205,29 @@ describe("for 循环", () => {
       result = loop.join(["a", "b", "cd"], "");
       assert.deepEqual(result, "abcd");
 
+    });
+  });
+
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+  describe("lastIndexOf(arr, element)", () => {
+    it("返回指定元素在数组中的最后一个的索引。如果不存在则返回 -1", () => {
+      let numbers = [
+        1, 2, 3, 4, 2
+      ];
+
+      var result;
+
+      result = loop.lastIndexOf(numbers, 1);
+      assert.deepEqual(result, 0);
+
+      result = loop.lastIndexOf(numbers, 2);
+      assert.deepEqual(result, 4);
+
+      result = loop.lastIndexOf(numbers, 5);
+      assert.deepEqual(result, -1);
+
+      result = loop.lastIndexOf(numbers, "1");
+      assert.deepEqual(result, -1);
     });
   });
 
