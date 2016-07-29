@@ -184,6 +184,31 @@ describe("for 循环", () => {
     });
   });
 
+  describe("join(arr, separator)", () => {
+    it("将数组中的所有元素连接成一个字符串", () => {
+      let strings = [
+        "a", "b", "cd"
+      ];
+
+      var result;
+
+      result = loop.join([], ":");
+      assert.deepEqual(result, "");
+
+      result = loop.join(["a", "b", "cd"], ":");
+      assert.deepEqual(result, "a:b:cd");
+
+      result = loop.join(["a", "b", "cd"], ".");
+      assert.deepEqual(result, "a.b.cd");
+
+      result = loop.join(["a", "b", "cd"], "");
+      assert.deepEqual(result, "abcd");
+
+    });
+  });
+
+  //  方法将数组中的所有元素连接成一个字符串
+
 
 
 
