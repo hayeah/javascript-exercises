@@ -162,16 +162,29 @@ describe("for 循环", () => {
     });
   });
 
-  describe("removeDuplicatedNumbers(arr)", () => {
-    it("把重复的数字移除", () => {
-      let a = [
-        0,1,2,3,1,2,4,5,6,7,8,9,8,8,9,0
+  describe("sliceArray(arr,a,b)", () => {
+    it("取出索引大于等于 a 小于 b 的元素", () => {
+      let numbers = [
+        1,2,3,4,5,6
       ];
 
-      let sum = loop.removeDuplicatedNumbers(a);
-      assert.deepEqual(sum, [0,1,2,3,4,5,6,7,8,9]);
+      var result;
+
+      result = loop.sliceArray(numbers, 0, 0);
+      assert.deepEqual(result, []);
+
+      result = loop.sliceArray(numbers, 0, 1);
+      assert.deepEqual(result, [1]);
+
+      result = loop.sliceArray(numbers, 0, 3);
+      assert.deepEqual(result, [1,2,3]);
+
+      result = loop.sliceArray(numbers, 0, 10);
+      assert.deepEqual(result, [1,2,3,4,5,6]);
     });
   });
+
+
 
 
 
