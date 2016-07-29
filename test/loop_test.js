@@ -85,7 +85,41 @@ describe("for 循环", () => {
     });
   });
 
+  describe("doubleEvenElements", () => {
+    it("直接修改数组元素，每个数字双倍", () => {
+      let a1 = [];
+      let r1 = loop.doubleEvenElements(a1);
+      assert.deepEqual(r1, []);
 
+      let a2 = [1, 2, 3];
+      let r2 = loop.doubleEvenElements(a2);
+      assert.equal(r2, a2);
+      assert.deepEqual(r2, [2, 4, 6]);
+    });
+  });
 
-  it("收集奇数索引的元素到一个新数组")
+  /**
+   * collectPropertyValues(arr, key) {
+   *   ...
+   * }
+   */
+
+  describe("collectPropertyValues(arr, key)", () => {
+    it("数组里面有对象，把 key 参数指定的值取出来收集到数组里面", () => {
+      let a = [
+        {foo: 1, bar: "a"},
+        {foo: 2, bar: "b"},
+        {foo: 3, bar: "c"},
+      ];
+
+      let r1 = loop.collectPropertyValues(a, "foo");
+      assert.deepEqual(r1, [1, 2, 3]);
+
+      let r2 = loop.collectPropertyValues(a, "bar");
+      assert.deepEqual(r2, ["a", "b", "c"]);
+
+      let r3 = loop.collectPropertyValues(a, "baz");
+      assert.deepEqual(r3, [undefined, undefined, undefined]);
+    });
+  });
 });
