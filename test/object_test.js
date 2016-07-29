@@ -130,6 +130,26 @@ describe("Object 操作", () => {
     });
   });
 
+  describe("transformProperties(o)", () => {
+    it("把所有为数字的值 x 2, 所有为字串的值改成大写", () => {
+      var r;
+
+      r = object.double({
+        a: 1,
+        b: "abc",
+        c: 2,
+        d: "EfG"
+      });
+
+      assert.deepEqual(r, {
+        a: 2,
+        b: "ABC",
+        c: 4,
+        d: "EFG",
+      });
+    });
+  });
+
 
 
 });
