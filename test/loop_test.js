@@ -200,11 +200,16 @@ describe("for 循环", () => {
       result = loop.sliceArray(numbers, 0, 1);
       assert.deepEqual(result, [1]);
 
+      result = loop.sliceArray(numbers, 2, 4);
+      assert.deepEqual(result, [3, 4]);
+
       result = loop.sliceArray(numbers, 0, 3);
       assert.deepEqual(result, [1, 2, 3]);
 
       result = loop.sliceArray(numbers, 0, 10);
       assert.deepEqual(result, [1, 2, 3, 4, 5, 6]);
+
+
     });
   });
 
