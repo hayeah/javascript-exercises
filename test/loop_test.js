@@ -123,6 +123,29 @@ describe("for 循环", () => {
     });
   });
 
+  describe("collectMultiplePropertyValues(arr, keys)", () => {
+    it("数组里面有对象，把 key 参数指定的值取出来收集到数组里面", () => {
+      let a = [
+        { foo: 1, bar: "a" },
+        { foo: 2, bar: "b" },
+        { foo: 3, bar: "c" },
+      ];
+
+      var r;
+      r = loop.collectMultiplePropertyValues(a, ["foo"]);
+      assert.deepEqual(r, [[1], [2], [3]]);
+
+      r = loop.collectMultiplePropertyValues(a, ["bar", "foo"]);
+      assert.deepEqual(r, [["a", 1], ["b", 2], ["c", 3]]);
+
+      r = loop.collectMultiplePropertyValues(a, ["foo", "bar"]);
+      assert.deepEqual(r, [[1, "a"], [2, "b"], [3, "c"]]);
+
+      r = loop.collectMultiplePropertyValues(a, ["foo", "bar", "baz"]);
+      assert.deepEqual(r, [[1, "a", undefined], [2, "b", undefined], [3, "c", undefined]]);
+    });
+  });
+
   describe("sumNestedNumberArrays(arr)", () => {
     it("用嵌套循环把嵌套数组的数字加总", () => {
       let a = [
