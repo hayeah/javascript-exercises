@@ -2,6 +2,18 @@ const { assert } = require("chai");
 const loop = require("../src/loop");
 
 describe("for 循环", () => {
+  /*
+  // 提示：用数组的 push 方法去积累元素。
+
+  cloneArray(arr) {
+    let result = [];
+    for(let i = 0; i < arr.length; i++) {
+      result.push(____);
+    }
+
+    return result;
+  }
+  */
   describe("cloneArray", () => {
     it("由 0 到 n 遍历一个数组，构建一个新的数组", () => {
       let a1 = [];
