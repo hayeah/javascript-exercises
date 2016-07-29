@@ -123,7 +123,6 @@ describe("for 循环", () => {
     });
   });
 
-  // nested loops
   describe("sumNestedNumberArrays(arr)", () => {
     it("用嵌套循环把嵌套数组的数字加总", () => {
       let a = [
@@ -137,4 +136,16 @@ describe("for 循环", () => {
       assert.equal(sum, 55);
     });
   });
+
+  describe("removeDuplicatedNumbers(arr)", () => {
+    it("把重复的数字移除", () => {
+      let a = [
+        0,1,2,3,1,2,4,5,6,7,8,9,8,8,9,0
+      ];
+
+      let sum = loop.removeDuplicatedNumbers(a);
+      assert.deepEqual(sum, [0,1,2,3,4,5,6,7,8,9]);
+    });
+  });
+
 });
