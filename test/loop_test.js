@@ -122,4 +122,19 @@ describe("for 循环", () => {
       assert.deepEqual(r3, [undefined, undefined, undefined]);
     });
   });
+
+  // nested loops
+  describe("sumNestedNumberArrays(arr)", () => {
+    it("用嵌套循环把嵌套数组的数字加总", () => {
+      let a = [
+        [1,2,3],
+        [4,5,6,7],
+        [],
+        [8,9,10],
+      ];
+
+      let sum = loop.sumNestedNumberArrays(a);
+      assert.equal(sum, 55);
+    });
+  });
 });
