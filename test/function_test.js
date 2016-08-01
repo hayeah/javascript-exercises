@@ -11,6 +11,7 @@ describe("function", () => {
     });
   });
 
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Default_parameters
   describe("defaultParameter", () => {
     it("用数组返回两个参数，第二个参数的默认值为 0", () => {
       assert.deepEqual(fun.defaultParameter(1, 2), [1, 2]);
@@ -19,6 +20,8 @@ describe("function", () => {
     });
   });
 
+  // 用 Object.assign 来实现
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
   describe("optionalDictionaryParameter(options)", () => {
     it("接受字典为可选参数，返回一个有默认值的字典", () => {
       assert.deepEqual(
