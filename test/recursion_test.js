@@ -128,12 +128,7 @@ describe("recursion", () => {
 
   // describe("nestedReduce(arrays, reducer)");
 
-
-
-  // count how many elements in deeply nested arrays
-  // factorial, fib
   // recursively generate data
   // tree traversal
-  // flatten arrays
   it
 });
