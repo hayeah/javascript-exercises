@@ -66,4 +66,10 @@ $ mocha test/hello_test.js
 
 # JS 练习
 
+大概按以下的循序撸：
+
 1. [循环](test/loop_test.js)
+1. [对象/字典](test/object_test.js)
+1. [递归](test/recursion_test.js)
+1. [函数](test/function_test.js)
+1. [高阶函数](test/functional_test.js)
