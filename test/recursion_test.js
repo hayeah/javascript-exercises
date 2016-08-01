@@ -65,6 +65,67 @@ describe("recursion", () => {
     });
   });
 
+  describe("typeCounts(o)", () => {
+    it("计算每一种类型出现几次", () => {
+      const { typeCounts } = recurse;
+
+      var o = [];
+      assert.deepEqual(typeCounts(0), {
+        arrays: 0,
+        numbers: 1,
+        strings: 0,
+        objects: 0,
+      });
+
+      assert.deepEqual(typeCounts("a"), {
+        arrays: 0,
+        numbers: 0,
+        strings: 1,
+        objects: 0,
+      });
+
+      assert.deepEqual(typeCounts({}), {
+        arrays: 0,
+        numbers: 0,
+        strings: 0,
+        objects: 1,
+      });
+
+      assert.deepEqual(typeCounts([]), {
+        arrays: 1,
+        numbers: 0,
+        strings: 0,
+        objects: 0,
+      });
+
+      assert.deepEqual(typeCounts({a: []}), {
+        arrays: 1,
+        numbers: 0,
+        strings: 0,
+        objects: 1,
+      });
+
+      assert.deepEqual(typeCounts([{},1,2,"a"]), {
+        arrays: 1,
+        numbers: 2,
+        strings: 1,
+        objects: 1,
+      });
+
+      var o = [
+        {a: "a", b: [2]},
+        [3,4, {c: ["c"]}]
+      ];
+
+      assert.deepEqual(typeCounts(o), {
+        arrays: 4,
+        numbers: 3,
+        strings: 2,
+        objects: 2,
+      });
+    });
+  });
+
   // describe("nestedReduce(arrays, reducer)");
 
 
