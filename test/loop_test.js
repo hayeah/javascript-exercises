@@ -224,6 +224,15 @@ describe("for 循环", () => {
       result = loop.join([], ":");
       assert.deepEqual(result, "");
 
+      result = loop.join(["a"], ":");
+      assert.deepEqual(result, "a");
+
+      result = loop.join(["a", "b"], "");
+      assert.deepEqual(result, "ab");
+
+      result = loop.join(["a", "b"], ":");
+      assert.deepEqual(result, "a:b");
+
       result = loop.join(["a", "b", "cd"], ":");
       assert.deepEqual(result, "a:b:cd");
 
