@@ -71,16 +71,18 @@ describe("for 循环", () => {
   describe("keepTwoNegativeNumbers", () => {
     it("构建新的数组，只保留最多两个负数的元素", () => {
 
+      const { keepTwoNegativeNumbers } = loop;
+
       let a1 = [];
-      let r1 = loop.keepTwoNegativeNumbers(a1);
+      let r1 = keepTwoNegativeNumbers(a1);
       assert.deepEqual(r1, []);
 
       let a2 = [1, 2, 3];
-      let r2 = loop.keepTwoNegativeNumbers(a2);
+      let r2 = keepTwoNegativeNumbers(a2);
       assert.deepEqual(r2, [1, 2, 3]);
 
       let a3 = [1, -1, 2, -2, 3, -3];
-      let r3 = loop.keepTwoNegativeNumbers(a3);
+      let r3 = keepTwoNegativeNumbers(a3);
       assert.deepEqual(r3, [1, -1, 2, -2, 3]);
     });
   });
