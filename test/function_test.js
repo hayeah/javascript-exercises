@@ -97,4 +97,14 @@ describe("function", () => {
     });
   });
 
+  describe("deeplyNestedClosures(n)", () => {
+    it("连续调用 n 次最终返回 n", () => {
+      assert.equal(fun.deeplyNestedClosures(0), 0);
+      assert.equal(fun.deeplyNestedClosures(1)(), 1);
+      assert.equal(fun.deeplyNestedClosures(2)()(), 2);
+      assert.equal(fun.deeplyNestedClosures(3)()()(), 3);
+      assert.equal(fun.deeplyNestedClosures(6)()()()()()(), 6);
+    });
+  });
+
 });
