@@ -87,8 +87,13 @@ describe("function", () => {
       assert.equal(one(), 1);
       assert.equal(two(), 2);
       assert.equal(three(), 3);
+    });
+  });
 
-
+  describe("nestedClosures", () => {
+    it("用嵌套函数相加 3 个数字", () => {
+      assert.equal(fun.nestedClosures(1)(1)(1), 3);
+      assert.equal(fun.nestedClosures(1)(2)(3), 6);
     });
   });
 
